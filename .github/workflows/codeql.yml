@@ -21,7 +21,7 @@ jobs:
           queries: "+security-and-quality"
       - name: Run unit tests
         run:
-            scripts/examples/gn_efr32_example.sh
+            tests/unittests.sh
       - name: Run Unit Tests
         uses: ./tests/CI/run-unit-test
       - name: Perform CodeQL analysis
