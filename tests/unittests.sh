@@ -13,6 +13,6 @@ cmake --build cmake_build
 # normal test
 (cd cmake_build; ctest -V)
 # valgrind
-(cd cmake_build; ctest -D ExperimentalMemCheck)
+# (cd cmake_build; ctest -D ExperimentalMemCheck)
 # gcov (only show coverage of services)
-gcovr --html=coverage.html  -f ".*cmake_build/services.*"
+# gcovr --html=coverage.html  -f ".*cmake_build/services.*"
