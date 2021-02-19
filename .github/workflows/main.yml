@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: "cpp"
+          queries: "+security-and-quality"
       - name: Run Unit Tests
         uses: ./tests/CI/run-unit-test
       - name: Uploading coverage result
@@ -18,3 +23,5 @@ jobs:
         with:
           name: gcovr coverage result
           path: tests/coverage.html
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v1
